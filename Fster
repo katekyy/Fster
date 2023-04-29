@@ -3,7 +3,7 @@
 	"id": "fster",
 	"version": "1.0.0",
 	"scripts": {
-		"linux": ["linux.sh"],
-		"termux": ["termux.sh"]
+		"linux": ["install-linux.sh"],
+		"termux": ["install-termux.sh"]
 	}
 }
