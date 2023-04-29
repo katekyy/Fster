@@ -6,6 +6,7 @@ local dkjson = require "dkjson"
 local argparse = require "argparse"
 
 local function clear_cache(output_path, tar_out_path)
+  print("Clearing cache..")
   os.remove(output_path)
   myfs.remove_directory(tar_out_path)
 end
@@ -54,7 +55,8 @@ if args.targets then
 end
 
 if args.target and not metadata_table.scripts[args.target] then
-  print("Error: target " .. args.target .. " is not defined in the Fster file.")
+  print("Error: Target " .. args.target .. " is not defined in the Fster file.")
+  clear_cache(output_path, tar_out_path)
   os.exit(1)
 end
 
@@ -77,6 +79,7 @@ local answer = io.read()
 if answer:lower() == "n" then
   print("Okay. Exiting! ( ._.)")
   clear_cache(output_path, tar_out_path)
+  os.exit()
 elseif answer ~= "" and answer:lower() ~= "y" then
   goto ask
 end
@@ -90,16 +93,16 @@ end
 for _, script in ipairs(script_table[args.target] or {}) do
   local script_path = myfs.look_for(script, tar_out_path)
   if script_path == nil then
-    print("Script file not found!")
+    print("Error: Script file not found!")
+    clear_cache(output_path, tar_out_path)
     os.exit(1)
   end
   if io.open(script_path) then
     print("Running Script: " .. script)
     os.execute("cd " .. string.match(script_path, "^(.-)[^\\/]*$") .. " && " .. script_path)
   else
-    print("Script file not found: " .. script_path)
+    print("Error: Script file not found: " .. script_path)
   end
 end
 
-print("Clearing cache..")
 clear_cache(output_path, tar_out_path)
