@@ -8,11 +8,11 @@ fi
 
 sudo cp ./bin/fster_lib $lib
 
-if [ ! -d "/bin/fster" ]; then
+if [ -d "/bin/fster" ]; then
   sudo rm /bin/fster
 fi
 
 sudo bash -c "echo \"#!/bin/bash
-lua $lib \\\$@\" >> /bin/fster"
+lua $lib \\\$@\" > /bin/fster"
 
 sudo chmod +x /bin/fster

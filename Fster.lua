@@ -10,14 +10,6 @@ local function clear_cache(output_path, tar_out_path)
   myfs.remove_directory(tar_out_path)
 end
 
-local function pwd()
-  local handle = io.popen("pwd")
-  if not handle then return nil end
-  local current_dir = handle:read("*a")
-  handle:close()
-  return current_dir
-end
-
 -- create an argument parser and define the "repo" argument
 local parser = argparse("Fster", "A Github repo based package manager. For Unix..")
 parser:argument("repo", "Github repository to install.")
@@ -51,7 +43,6 @@ if not metadata then
 end
 
 local metadata_table = dkjson.decode(metadata)
-print("Metadata: "..metadata)
 local script_table = {}
 
 if args.targets then
@@ -98,8 +89,12 @@ end
 
 for _, script in ipairs(script_table[args.target] or {}) do
   local script_path = myfs.look_for(script, tar_out_path)
+  if script_path == nil then
+    print("Script file not found!")
+    os.exit(1)
+  end
   if io.open(script_path) then
-    print("Running script: " .. script)
+    print("Running Script: " .. script)
     os.execute("cd " .. string.match(script_path, "^(.-)[^\\/]*$") .. " && " .. script_path)
   else
     print("Script file not found: " .. script_path)
