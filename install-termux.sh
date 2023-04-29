@@ -1,6 +1,6 @@
 #!/bin/bash
 
-prefix="/data/data/com.termux/files"
+prefix="/data/data/com.termux/files/usr"
 lib="$prefix/lib/fster"
 bin="$prefix/bin"
 
