@@ -4,12 +4,12 @@
 > THIS PROJECT IS UNFINISHED!
 
 ## Prerequisites
-#### Linux
-- [lua]
+- Linux
+  - [lua]
 
-#### Termux
-- [lua]
-- [sudo] or [sudo without need to root]
+- Termux
+  - [lua]
+  - [sudo] or [sudo without need to root]
 
 ## Installation
 #### Linux
