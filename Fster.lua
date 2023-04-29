@@ -11,7 +11,7 @@ local function clear_cache(output_path, tar_out_path)
 end
 
 -- create an argument parser and define the "repo" argument
-local parser = argparse("Fster", "A Github repo based package manager. For Unix..")
+local parser = argparse("Fster", "A Github repo based package installer. For Unix..")
 parser:argument("repo", "Github repository to install.")
 parser:option("--target", "Targets defined in repos Fster file.")
 parser:option("--targets", "List available targets.", false, {}, 0)
