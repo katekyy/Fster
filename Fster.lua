@@ -107,3 +107,4 @@ for _, script in ipairs(script_table[args.target] or {}) do
 end
 
 clear_cache(output_path, tar_out_path)
+print("[ ✔️ ] Done!")

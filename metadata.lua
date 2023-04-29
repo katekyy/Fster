@@ -1,5 +1,5 @@
 local lfs = require("lfs")
-local debug = true
+local debug = false
 
 function lookup_metadata(path)
     if debug then print("Checking directory:", path) end
