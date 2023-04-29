@@ -10,7 +10,7 @@ cp ./bin/fster_lib $lib
 
 cat > /bin/fster <<EOM
 #!/bin/bash
-lua $lib \$@
+lua $lib $@
 EOM
 
 sudo chmod +x /bin/fster
