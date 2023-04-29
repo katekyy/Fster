@@ -1,5 +1,5 @@
 local lfs = require("lfs")
-local debug = false
+local debug = true
 
 function lookup_metadata(path)
     if debug then print("Checking directory:", path) end
@@ -17,10 +17,11 @@ function lookup_metadata(path)
                 end
             elseif file:upper() == "FSTER" then
                 print("Checking Fster metadata..")
+                if debug then print(file) end
                 local f = io.open(file_path, "r")
                 if not f then
-                  print("Failed while checking metadata. Cannot open the file.")
-                  os.exit(1)
+                    print("Failed while checking metadata. Cannot open the file.")
+                    os.exit(1)
                 end
                 local metadata = f:read("*a")
                 f:close()

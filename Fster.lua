@@ -51,6 +51,7 @@ if not metadata then
 end
 
 local metadata_table = dkjson.decode(metadata)
+print("Metadata: "..metadata)
 local script_table = {}
 
 if args.targets then

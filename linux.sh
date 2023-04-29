@@ -2,16 +2,17 @@
 
 lib="/lib/fster/fster_lib"
 
-sudo bash -c "
-if [ ! -d \"/lib/fster\" ]; then
-  mkdir \"/lib/fster\"
+if [ ! -d "/lib/fster" ]; then
+  sudo mkdir "/lib/fster"
 fi
-cp ./bin/fster_lib $lib
 
-cat > /bin/fster <<EOM
-#!/bin/bash
-lua $lib $@
-EOM
+sudo cp ./bin/fster_lib $lib
+
+if [ ! -d "/bin/fster" ]; then
+  sudo rm /bin/fster
+fi
+
+sudo bash -c "echo \"#!/bin/bash
+lua $lib \\\$@\" >> /bin/fster"
 
 sudo chmod +x /bin/fster
-"

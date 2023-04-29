@@ -13,7 +13,7 @@ function github_repo_exists(repo_name)
 end
 
 function get_repo(repo_name)
-  local output_name = string.gsub(repo_name, "/", "_")..cache.random_string()..".tar.gz"
+  local output_name = string.gsub(repo_name, "/", "_").."-"..cache.random_string()..".tar.gz"
   local actual_repo_url = "https://github.com/"..repo_name.."/archive/main.tar.gz"
 
   print("Checking the repo.. "..repo_name)
