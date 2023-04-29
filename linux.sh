@@ -7,7 +7,9 @@ if [ ! -d "/lib/fster" ]; then
 fi
 sudo cp ./bin/fster_lib $lib
 
-sudo echo "#!/bin/bash
-lua /lib/fster/fster_lib $@" >> /bin/fster
+sudo echo "
+#!/bin/bash
+lua $lib \$\@
+" >> /bin/fster
 
 sudo chmod +x /bin/fster
