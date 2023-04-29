@@ -9,7 +9,7 @@
 
 #### Termux
 - [lua]
-- [sudo] or (sudo without needing to root)[sudo-no-root]
+- [sudo] or [sudo without need to root]
 
 ## Installation
 #### Linux
@@ -27,4 +27,4 @@ $ ./install-termux.sh
 ```
 
 [lua]: https://www.lua.org/download.html
-[sudo-no-root]: https://github.com/virtual-designer/termux-sudo-without-root
+[sudo without need to root]: https://github.com/virtual-designer/termux-sudo-without-root
