@@ -1,3 +1,16 @@
 # 🪶 Fster
-## Github repository based package manager!
-## THIS PROJECT IS UNFINISHED!
+### Github repository based package manager!
+### THIS PROJECT IS UNFINISHED!
+
+## Prerequisites
+- [lua]
+
+## Installation
+#### Linux
+```console
+$ git clone https://github.com/katekyy/Fster
+$ cd Fster
+$ ./install.sh
+```
+
+[lua]: https://www.lua.org/download.html
