@@ -17,7 +17,7 @@ if [ -d "/bin/fster" ]; then
 fi
 
 sudo bash -c "echo \"#!/bin/bash
-previous=\`/bin/pwd\`
+previous=\\\`/bin/pwd\\\`
 cd $lib
 lua $lib/fster_lib \\\$@
 cd \\\$previous
