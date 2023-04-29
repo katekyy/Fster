@@ -1,4 +1,4 @@
-# 🪶 Fster
+# 🪔 Fster
 
 > **Warning**:
 > THIS PROJECT IS UNFINISHED!
