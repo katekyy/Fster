@@ -51,6 +51,7 @@ if args.targets then
   for os_name, _ in pairs(metadata_table.scripts) do
     print("  "..os_name)
   end
+  clear_cache(output_path, tar_out_path)
   os.exit()
 end
 
