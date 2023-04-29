@@ -1,7 +1,7 @@
 {
-	"name": "fster"
-	"id": "fster"
-	"version": "1.0.0"
+	"name": "fster",
+	"id": "fster",
+	"version": "1.0.0",
 	"scripts": {
 		"linux": ["linux.sh lib_install"]
 	}
