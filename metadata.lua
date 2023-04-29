@@ -15,7 +15,7 @@ function lookup_metadata(path)
                         return metadata
                     end
                 end
-            elseif file:upper() == "FSTER" then
+            elseif file:upper() == "FSTER" or file:upper() == "FSTERFILE" then
                 print("Checking Fster metadata..")
                 if debug then print(file) end
                 local f = io.open(file_path, "r")
