@@ -25,4 +25,4 @@ lua $lib/fster_lib \\\$@
 cd \\\$previous
 \" > $bin/fster"
 
-sudo chmod +x /bin/fster
+sudo chmod +x $bin/fster
