@@ -27,4 +27,5 @@ $ ./install-termux.sh
 ```
 
 [lua]: https://www.lua.org/download.html
+[sudo]: https://github.com/buzzkillhardball/tsu-for-termux
 [sudo without need to root]: https://github.com/virtual-designer/termux-sudo-without-root
