@@ -3,6 +3,6 @@
 	"id": "fster",
 	"version": "1.0.0",
 	"scripts": {
-		"linux": ["linux.sh", "arg:lib_install"]
+		"linux": ["linux.sh"]
 	}
 }
